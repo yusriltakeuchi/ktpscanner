@@ -50,7 +50,7 @@ class NIKItem extends StatelessWidget {
           ),
           const Divider(color: Colors.black),
           _textItem(
-            title: "Kota/Kabupaten",
+            title: "Kabupaten/Kota",
             value: nik?.city
           ),
           const Divider(color: Colors.black),
