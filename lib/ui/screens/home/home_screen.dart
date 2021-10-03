@@ -172,14 +172,20 @@ class _HomeBodyState extends State<HomeBody> {
                           ),
                           child: AspectRatio(
                             aspectRatio: scannerProv.imageSize!.aspectRatio,
-                            child: Image.file(scannerProv.image!,
-                                fit: BoxFit.contain),
+                            child: Image.file(
+                              scannerProv.image!,
+                              fit: BoxFit.contain,
+                            ),
                           ),
                         )
-                      : Image.file(scannerProv.image!, fit: BoxFit.contain),
+                      : Image.file(
+                          scannerProv.image!,
+                          fit: BoxFit.contain,
+                        ),
                 )
               : Container(
                   height: deviceHeight(context) * 0.3,
+                  padding: const EdgeInsets.all(10),
                   child: Image.asset(
                     'assets/images/ktp-example.png',
                     fit: BoxFit.contain,
