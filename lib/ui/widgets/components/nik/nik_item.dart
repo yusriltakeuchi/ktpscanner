@@ -55,7 +55,7 @@ class NIKItem extends StatelessWidget {
           child: Text(
             value!,
             textAlign: TextAlign.end,
-            style: const TextStyle(color: Colors.black, fontSize: 20),
+            style: const TextStyle(color: Colors.black, fontSize: 21),
           ),
         )
       ],
