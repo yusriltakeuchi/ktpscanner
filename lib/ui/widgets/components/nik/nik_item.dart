@@ -14,55 +14,27 @@ class NIKItem extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.black),
-        borderRadius: BorderRadius.circular(10)
-      ),
+          border: Border.all(color: Colors.black),
+          borderRadius: BorderRadius.circular(10)),
       child: Column(
         children: [
-          _textItem(
-            title: "NIK",
-            value: nik?.nik
-          ),
+          _textItem(title: "NIK", value: nik?.nik),
           const Divider(color: Colors.black),
-          _textItem(
-            title: "Kode Unik",
-            value: nik?.uniqueCode
-          ),
+          _textItem(title: "Kode Unik", value: nik?.uniqueCode),
           const Divider(color: Colors.black),
-          _textItem(
-            title: "Jenis Kelamin",
-            value: nik?.gender
-          ),
+          _textItem(title: "Jenis Kelamin", value: nik?.gender),
           const Divider(color: Colors.black),
-          _textItem(
-            title: "Usia",
-            value: nik?.age
-          ),
+          _textItem(title: "Usia", value: nik?.age),
           const Divider(color: Colors.black),
-          _textItem(
-            title: "Ulang Tahun",
-            value: nik?.nextBirthday
-          ),
+          _textItem(title: "Ulang Tahun", value: nik?.nextBirthday),
           const Divider(color: Colors.black),
-          _textItem(
-            title: "Provinsi",
-            value: nik?.province
-          ),
+          _textItem(title: "Provinsi", value: nik?.province),
           const Divider(color: Colors.black),
-          _textItem(
-            title: "Kabupaten/Kota",
-            value: nik?.city
-          ),
+          _textItem(title: "Kabupaten/Kota", value: nik?.city),
           const Divider(color: Colors.black),
-          _textItem(
-            title: "Kecamatan",
-            value: nik?.subdistrict
-          ),
+          _textItem(title: "Kecamatan", value: nik?.subdistrict),
           const Divider(color: Colors.black),
-          _textItem(
-            title: "Kode Pos",
-            value: nik?.postalCode
-          ),
+          _textItem(title: "Kode Pos", value: nik?.postalCode),
         ],
       ),
     );
@@ -76,21 +48,14 @@ class NIKItem extends StatelessWidget {
           child: Text(
             title!,
             style: const TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 18
-            ),
+                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
           ),
         ),
-
         Expanded(
           child: Text(
             value!,
             textAlign: TextAlign.end,
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 18
-            ),
+            style: const TextStyle(color: Colors.black, fontSize: 20),
           ),
         )
       ],

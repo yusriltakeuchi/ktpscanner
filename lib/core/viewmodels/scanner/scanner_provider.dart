@@ -11,12 +11,13 @@ import 'package:provider/provider.dart';
 
 class ScannerProvider extends ChangeNotifier {
   ///=========================
-  /// This is property field 
+  /// This is property field
   ///=========================
-  
+
   /// Image result from image picker
   File? _image;
   File? get image => _image;
+
   /// Define image size from image picker
   Size? _imageSize;
   Size? get imageSize => _imageSize;
@@ -26,7 +27,7 @@ class ScannerProvider extends ChangeNotifier {
 
   /// Text detector engine
   TextDetector? _textDetector;
-  
+
   /// List of nik gained from scanner
   List<NIKModel?>? _nik;
   List<NIKModel?>? get nik => _nik;
@@ -34,31 +35,32 @@ class ScannerProvider extends ChangeNotifier {
   /// Event handling
   bool _onSearch = false;
   bool get onSearch => _onSearch;
-  
+
   ///=========================
-  /// This is function logic 
+  /// This is function logic
   ///=========================
 
   /// Instance provider
-  static ScannerProvider instance(BuildContext context)
-  => Provider.of(context, listen: false);
-  
+  static ScannerProvider instance(BuildContext context) =>
+      Provider.of(context, listen: false);
+
   void scan(ImageSource source) async {
     final _picker = ImagePicker();
-    final XFile? _xImage = await _picker.pickImage(source: source, imageQuality: 100);
+    final XFile? _xImage =
+        await _picker.pickImage(source: source, imageQuality: 100);
     if (_xImage != null) {
-
       /// For iOS it will have some issue in image,
       /// so we rotating the image to get fixed
-      _image = Platform.isIOS 
-        ? await FlutterExifRotation.rotateImage(path: _xImage.path) 
-        : File(_xImage.path);
+      _image = Platform.isIOS
+          ? await FlutterExifRotation.rotateImage(path: _xImage.path)
+          : File(_xImage.path);
+
       /// Start recognize image result
       recognizeImage();
     }
   }
 
-  /// Recognize image from image_picker 
+  /// Recognize image from image_picker
   /// and parse to find NIK
   void recognizeImage() async {
     setOnSearch(true);
@@ -68,6 +70,7 @@ class ScannerProvider extends ChangeNotifier {
 
     /// Creating an InputImage object using the image path
     final inputImage = InputImage.fromFilePath(_image!.path);
+
     /// Retrieving the RecognisedText from the InputImage
     final text = await _textDetector?.processImage(inputImage);
 
@@ -78,10 +81,8 @@ class ScannerProvider extends ChangeNotifier {
     /// Finding matching value with NIK pattern and store to list
     for (TextBlock block in text!.blocks) {
       for (TextLine line in block.lines) {
-
         String _text = line.text.trim().replaceAll(" ", "");
         if (regEx.hasMatch(_text)) {
-
           /// Parsing raw text and find NIK Informations
           var _result = await parse(regEx.stringMatch(_text)!);
           if (_result != null) {
@@ -132,14 +133,12 @@ class ScannerProvider extends ChangeNotifier {
         text = text! + "${_item?.nik}\n";
       }
 
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text(
-            "Berhasil menyalin nomor NIK",
-          ),
-          backgroundColor: Colors.green,
-        )
-      );
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text(
+          "Berhasil menyalin nomor NIK",
+        ),
+        backgroundColor: Colors.green,
+      ));
     }
   }
 
