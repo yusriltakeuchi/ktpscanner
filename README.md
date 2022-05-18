@@ -1,5 +1,8 @@
 # ktpscanner
 Flutter project to scan Indonesian NIK using OCR Techology.
+## Screenshots
+<p><img src="https://i.ibb.co/FVRgtqp/IMG-8948.png"/></p>
+
 ### Detected Details:
 - Nomor Induk Kependudukan / NIK (National Identification Number).
 - Kode Unik (Scanned KTP Unique Identifier).
@@ -14,5 +17,5 @@ Flutter project to scan Indonesian NIK using OCR Techology.
 ### Work for Platform:
 - Android
 - iOS (You must create firebase project and paste GoogleService-Info.plist to project)
-## Screenshots
-<p><img src="https://i.ibb.co/FVRgtqp/IMG-8948.png"/></p>
+### Tested on Flutter Version:
+- Stable 2.10.5

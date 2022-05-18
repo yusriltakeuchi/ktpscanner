@@ -7,7 +7,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.8.1"
+    version: "2.8.2"
   boolean_selector:
     dependency: transitive
     description:
@@ -21,7 +21,7 @@ packages:
       name: characters
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.0"
+    version: "1.2.0"
   charcode:
     dependency: transitive
     description:
@@ -107,13 +107,22 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  google_ml_kit:
-    dependency: "direct main"
+  google_mlkit_commons:
+    dependency: transitive
     description:
-      name: google_ml_kit
+      name: google_mlkit_commons
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.2"
+    version: "0.2.0"
+  google_mlkit_text_recognition:
+    dependency: "direct main"
+    description:
+      path: "packages/google_mlkit_text_recognition"
+      ref: master
+      resolved-ref: c9517905e71b52a8d28997a640c57f816d798c6d
+      url: "https://github.com/bharat-biradar/Google-Ml-Kit-plugin.git"
+    source: git
+    version: "0.3.0"
   http:
     dependency: transitive
     description:
@@ -169,7 +178,14 @@ packages:
       name: matcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.10"
+    version: "0.12.11"
+  material_color_utilities:
+    dependency: transitive
+    description:
+      name: material_color_utilities
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.3"
   meta:
     dependency: transitive
     description:
@@ -265,7 +281,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.2"
+    version: "0.4.8"
   typed_data:
     dependency: transitive
     description:
@@ -279,7 +295,7 @@ packages:
       name: vector_math
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0"
+    version: "2.1.1"
 sdks:
-  dart: ">=2.14.0 <3.0.0"
+  dart: ">=2.16.0 <3.0.0"
   flutter: ">=2.5.0"

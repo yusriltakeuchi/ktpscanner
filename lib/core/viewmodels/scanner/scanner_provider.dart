@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_exif_rotation/flutter_exif_rotation.dart';
-import 'package:google_ml_kit/google_ml_kit.dart';
+import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ktpscanner/ui/constant/constant.dart';
 import 'package:nik_validator/nik_validator.dart';
@@ -25,7 +25,7 @@ class ScannerProvider extends ChangeNotifier {
   List<TextElement>? get textElements => _textElements;
 
   /// Text detector engine
-  TextDetector? _textDetector;
+  TextRecognizer? _textDetector;
   
   /// List of nik gained from scanner
   List<NIKModel?>? _nik;
@@ -63,7 +63,7 @@ class ScannerProvider extends ChangeNotifier {
   void recognizeImage() async {
     setOnSearch(true);
 
-    _textDetector = GoogleMlKit.vision.textDetector();
+    _textDetector = TextRecognizer();
     _getImageSize(_image);
 
     /// Creating an InputImage object using the image path

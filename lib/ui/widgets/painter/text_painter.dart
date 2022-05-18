@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_ml_kit/google_ml_kit.dart';
+import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 
 class TextDetectorPainter extends CustomPainter {
   TextDetectorPainter(this.absoluteImageSize, this.elements);
@@ -14,10 +14,10 @@ class TextDetectorPainter extends CustomPainter {
 
     Rect scaleRect(TextElement container) {
       return Rect.fromLTRB(
-        container.rect.left * scaleX,
-        container.rect.top * scaleY,
-        container.rect.right * scaleX,
-        container.rect.bottom * scaleY,
+        container.boundingBox.left * scaleX,
+        container.boundingBox.top * scaleY,
+        container.boundingBox.right * scaleX,
+        container.boundingBox.bottom * scaleY,
       );
     }
 
